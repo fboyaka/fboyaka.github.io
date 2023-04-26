@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1 style="color:#ba0c2f;">OSU AU23 First Semester Bingo Sheet</h1>
+    <p>Please select your Major and Math level to receive your recommended courses for the first semester:</p>
+
+    <form>
+      <div class="form-group">
+        <label for="major-selector">Select Major</label>
+        <select class="form-control" id="major-selector">
+          <option>Aerospace Engineering</option>
+          <option value="av">Aviation</option>
+          <option value="biomed">Biomedical Engineering</option>
+          <option value="chem">Chemical Engineering</option>
+          <option value="csew">Computer Science (with experience)</option>
+          <option value="cseo">Computer Science (without experience)</option>
+          <option value="ecew">Electrical & Computer Engineering (with experience)</option>
+          <option value="eceo">Electrical & Computer Engineering (without experience)</option>
+          <option value="ep">Engineering Physics</option>
+          <option value="ee">Environmental Engineering</option>
+          <option value="meche">Mechanical Engineering</option>
+          <option value="fabe">Food, Ag, and Biological Engineering</option>
+          <option value="msea">Materials Science and Engineering()</option>
+          <option value="mseb">Materials Science and Engineering()</option>
+          <option value="msec">Materials Science and Engineering()</option>
+          <option value="msed">Materials Science and Engineering()</option>
+          <option value="ise">Industrial and Systems Engineering</option>
+          <option value="mse">Materials Science and Engineering</option>
+          <option value="me">Mechanical Engineering</option>
+          <option value="we">Welding Engineering</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="math-selector">Select Math level:</label>
+        <select class="form-control" id="math-selector">
+          <option value="L">L</option>
+          <option value="M">M</option>
+          <option value="N">N</option>
+          <option value="R">R</option>
+          <option value="S">S</option>
+        </select>
+        <br/>
+        <button type="button" class="btn btn-primary mb-2" onclick="foo();">Show classes</button>
+      </div>
+
+      <img id="img" src="chart-images/math placement Scores.png"/>
+
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      function foo(){
+        var img = document.getElementById("img");
+        var major = document.getElementById('major-selector').value;
+        var math = document.getElementById('math-selector').value;
+        console.log("Form selections:"+major+" "+math);
+        switch(major){
+        case("csew" || "cseo"):
+          img.src = "chart-images/CSE WITH Courses.png";
+          break;
+        default:
+          console.log("Error");
+        }
+
+      };
+
+      function handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const formProps = Object.fromEntries(formData);
+      }
+    </script>
+  </body>
+</html>
