@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,11 +25,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>OSU Bingo Sheets</title>
   </head>
   <body>
-    <h1 style="color:#ba0c2f;">OSU AU23 First Semester Bingo Sheet</h1>
-    <p>Please select your Major and Math level to receive your recommended courses for the first semester:</p>
+    <div class="row">
+      <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+    <h1 style="color:#ba0c2f;text-align: center;">AU23 Bingo Sheet</h1>
+    <p>Please select your Major and Math level to receive your recommended Courses for your first semester:</p>
 
     <form>
       <div class="form-group">
@@ -22,41 +42,63 @@
           <option value="av">Aviation</option>
           <option value="biomed">Biomedical Engineering</option>
           <option value="chem">Chemical Engineering</option>
+          <option value="civeng">Civil Engineering</option>
           <option value="csew">Computer Science (with experience)</option>
           <option value="cseo">Computer Science (without experience)</option>
-          <option value="ecew">Electrical & Computer Engineering (with experience)</option>
-          <option value="eceo">Electrical & Computer Engineering (without experience)</option>
-          <option value="ep">Engineering Physics</option>
-          <option value="ee">Environmental Engineering</option>
-          <option value="meche">Mechanical Engineering</option>
-          <option value="fabe">Food, Ag, and Biological Engineering</option>
-          <option value="msea">Materials Science and Engineering()</option>
-          <option value="mseb">Materials Science and Engineering()</option>
-          <option value="msec">Materials Science and Engineering()</option>
-          <option value="msed">Materials Science and Engineering()</option>
+          <option value="compeng">Computer Engineering</option>
+          <option value="eleceng">Electrical Engineering</option>
+          <option value="engphy">Engineering Physics</option>
+          <option value="enveng">Environmental Engineering</option>
+          <option value="fabefood">Food, Ag, and Biological Engineering (Food)</option>
+          <option value="fabeag">Food, Ag, and Biological Engineering (Agricultural)</option>
+          <option value="fabebio">Food, Ag, and Biological Engineering (Biological)</option>
+          <option value="fabeeco">Food, Ag, and Biological Engineering (Ecological)</option>
           <option value="ise">Industrial and Systems Engineering</option>
           <option value="mse">Materials Science and Engineering</option>
-          <option value="me">Mechanical Engineering</option>
+          <option value="meche">Mechanical Engineering</option>
           <option value="we">Welding Engineering</option>
         </select>
       </div>
       <div class="form-group">
         <label for="math-selector">Select Math level:</label>
         <select class="form-control" id="math-selector">
-          <option value="L">L</option>
+          <option value="Mid to High L">Mid to High L</option>
+          <option value="Low L">Low L</option>
           <option value="M">M</option>
           <option value="N">N</option>
           <option value="R">R</option>
           <option value="S">S</option>
         </select>
-        <br/>
-        <button type="button" class="btn btn-primary mb-2" onclick="changeText();">Show classes (Text)</button>
-        <button type="button" class="btn btn-primary mb-2" onclick="changeImage();">Show classes (Image)</button>
+        
       </div>
-      <p id="text">Default Text</p>
-      <img id="img" src="chart-images/math placement Scores.png"/>
+      <label for="form-check">Show Honors Courses?</label>
+      <div class="form-check">
+        <input id="honorsyes" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Yes
+        </label>
+      </div>
+      <div class="form-check">
+        <input id="honorsno" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+          No
+        </label>
+      </div>
+      </br>
+      <button type="button" class="btn btn-primary mb-2" onclick="changeText();">Show Courses</button>
+        <!--<button type="button" class="btn btn-primary mb-2" onclick="changeImage();">Show classes (Image)</button>-->
 
+      <!--
+      <img id="img" src="chart-images/math placement Scores.png"/>
+      -->
     </form>
+    </br>
+    <p id="text">Courses will show up here</p>
+    <p id="honorstext">Honors options will show up here</p>
+
+    <div class="col-sm-4"></div>
+    </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -68,33 +110,445 @@
         var text = document.getElementById("text");
         var major = document.getElementById('major-selector').value;
         var math = document.getElementById('math-selector').value;
-        console.log("Form selections:"+major+" "+math);
+        var honors = ((document.getElementById("honorsyes").checked) ? true : false);
+        changeHonors(honors);
+
+        console.log("Form selections:"+major+" "+math+" "+honors+" ");
         switch(major){
-        case("aero"):
-          text.innerHTML = "Aerospace";
+      case("aero"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>ENGR 1100.01</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>General Education</td>
+          </tr>
+          </table>`;
+          break;
+
         case("av"):
-          text.innerHTML = "Aviation";
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>ENGR 1100.01</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>AVIATN 2000</td>
+          </tr>
+          <tr>
+            <td>AVIATN 2000</td>
+          </tr>
+          </table>`;
           break;
         case("biomed"):
-          text.innerHTML = "Biomedical";
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>CHEM 1210</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>ENGR 1100</td>
+          </tr>
+          <tr>
+            <td>GEN ED</td>
+          </tr>
+          </table>`;
           break;
         case("chem"):
-          text.innerHTML = "Chemistry";
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>ENGR 1100</td>
+          </tr>
+          <tr>
+            <td>GEN Writing and Information Literacy</td>
+          </tr>
+          <tr>
+            <td>GEN Launch Seminar</td>
+          </tr>
+          </table>`;
           break;
-        case("csew" || "cseo"):
-          text.innerHTML = "Computer Science";
+
+        case("civeng"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>ENGR 1100</td>
+          </tr>
+          <tr>
+            <td>GEN Writing and Information Literacy</td>
+          </tr>
+          <tr>
+            <td>GEN Launch Seminar</td>
+          </tr>
+          </table>`;
           break;
-        case("ecew" || "eceo"):
-          text.innerHTML = "Electrical";
+
+        case("csew"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>ENG 1100</td>
+          </tr>
+          <tr>
+            <td>GEN ED</td>
+          </tr>
+          </table>`;
           break;
-        case("ep"):
-          text.innerHTML = "Environmental Physics";
+        
+        case("cseo"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>ENG 1100</td>
+          </tr>
+          <tr>
+            <td>CSE 1222 OR CSE 1223 (1223 Preferred)</td>
+          </tr>
+          </table>`;
           break;
+
+        case("compeng" || "eleceng"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>ENGR 1100</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>GE Foundation</td>
+          </tr>
+          </table>`;
+          break;
+
+        case("engphy"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>PHYSICS 1270* Options listed below</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>ENG 1100</td>
+          </tr>
+          <tr>
+            <td>Writing and Info Literacy GE</td>
+          </tr>
+          </table>`;
+          break;
+
+        case("enveng"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>ENG 1100</td>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>Writing and Info Literacy GE</td>
+          </tr>
+          <tr>
+            <td>GEN Launch Seminar</td>
+          </tr>
+          </table>`;
+          break;
+
+        case("ise"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>ENG 1100</td>
+          </tr>
+          <tr>
+            <td>Writing and Info Literacy GE</td>
+          </tr>
+          <tr>
+            <td>FW???</td>
+          </tr>
+          </table>`;
+          break;
+        
+        case("fabefood" || "fabebio"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>ENGR 1100.15 or equiv</td>
+          </tr>
+          <tr>
+            <td>CHEM 1210</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>General Education</td>
+          </tr>
+          <tr>
+            <td>GENED 1201</td>
+          </tr>
+          </table>`;
+          break;
+
+        case("fabeag" || "fabeeco"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>ENGR 1100.15 or equiv</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>General Education</td>
+          </tr>
+          <tr>
+            <td>GENED 1201</td>
+          </tr>
+          </table>`;
+          break;
+
+        case("mse"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>ENG 1100</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>GEN ED</td>
+          </tr>
+          </table>`;
+          break;
+
+        case("meche"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>ENG 1100</td>
+          </tr>
+          <tr>
+            <td>GEN ED</td>
+          </tr>
+          </table>`;
+          break;
+
+        case("we"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>ENG 1100</td>
+          </tr>
+          <tr>
+            <td>ENGR 1181</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math)+`</td>
+          </tr>
+          <tr>
+            <td>PHYSICS 1250</td>
+          </tr>
+          <tr>
+            <td>GEN ED</td>
+          </tr>
+          </table>`;
+          break;
+
         default:
-          console.log("Error");
+        text.innerHTML="Error";
         }
 
       };
+
+      function getMath(letter){
+        switch(letter){
+          case("S"):
+            return `MATH 1050`;
+          case("R"):
+            return `MATH 1120`;
+          case("N"):
+            return `MATH 1120`;
+          case("M"):
+            return `MATH 1140`;
+          case("Low L"):
+            return `MATH 1140`;
+          case("Mid to High L"):
+            return `MATH 1151 or 1181H`;
+          default:
+            return `Invalid Math`;
+          return ``;
+        }
+      }
+
+      function changeHonors(honors){
+        var honorsText = document.getElementById("honorstext");
+        if(honors){
+          honorsText.innerHTML = `Honors? Yes`;
+        }else{
+          honorsText.innerHTML = `Honors? No`;
+        }
+      }
 
       function changeImage(){
         var img = document.getElementById("img");
@@ -102,7 +556,7 @@
         var math = document.getElementById('math-selector').value;
         console.log("Form selections:"+major+" "+math);
         switch(major){
-        case("av"):
+        case("aero"):
           img.src = "chart-images/AERO Courses.png";
           break;
         case("av"):
