@@ -313,7 +313,7 @@
           break;
 
         case("engphy"):
-          var engphystext = 'PHYSICS 1250-1251, 1260-1261, or 1270-1271'
+          var engphystext = 'PHYSICS 1250-1251 or 1270-1271'
           if(honors) engphystext = 'PHYSICS 1250-1251, 1250H-1251H, 1260-1261, or 1270-1271'
           text.innerHTML = `
           <table>
@@ -546,12 +546,12 @@
 
       function changeHonors(honors){
         var honorsText = document.getElementById("honorstext");
-        if(honors) honorsText.innerHTML = `Please make sure you don't select more than two honors courses`;
+        if(honors) honorsText.innerHTML = `Please make sure you don't enroll in more than two honors courses`;
         else honorsText.innerHTML = `Honors not selected`;
       }
 
       function getPhysics(honors){
-        if(honors)return `PHYSICS 1250 or 1250H`
+        if(honors)return `PHYSICS 1250 or 1260`
         else return `PHYSICS 1250`
       }
 
