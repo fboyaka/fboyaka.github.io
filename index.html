@@ -565,41 +565,6 @@
         else return `ENGR 1181`
       }
 
-
-      function changeImage(){
-        var img = document.getElementById("img");
-        var major = document.getElementById('major-selector').value;
-        var math = document.getElementById('math-selector').value;
-        console.log("Form selections:"+major+" "+math);
-        switch(major){
-        case("aero"):
-          img.src = "chart-images/AERO Courses.png";
-          break;
-        case("av"):
-          img.src = "chart-images/AVN Courses.png";
-          break;
-        case("biomed"):
-          img.src = "chart-images/BIOMED Courses.png";
-          break;
-        case("chem"):
-          img.src = "chart-images/CHEM Courses.png";
-          break;
-        case("csew" || "cseo"):
-          img.src = "chart-images/ECE WITH Courses.png";  
-          break;
-        case("ecew" || "eceo"):
-          img.src = "chart-images/CSE WITH Courses.png";
-          break;
-        case("ep"):
-          img.src = "chart-images/CSE WITH Courses.png";
-          break;
-        
-        default:
-          console.log("Error");
-        }
-
-      };
-
       function handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData(e.target);
