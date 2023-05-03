@@ -116,6 +116,7 @@
         console.log("Form selections:"+major+" "+math+" "+honors+" ");
         switch(major){
       case("aero"):
+          
           text.innerHTML = `
           <table>
           <tr>
@@ -125,13 +126,13 @@
             <td>ENGR 1100.01</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
             <td>General Education</td>
@@ -149,13 +150,13 @@
             <td>ENGR 1100.01</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
-            <td>AVIATN 2000</td>
+            <td>AVIATN 2100</td>
           </tr>
           <tr>
             <td>AVIATN 2000</td>
@@ -169,13 +170,13 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>CHEM 1210</td>
+            <td>`+getChem(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
             <td>ENGR 1100</td>
@@ -192,13 +193,13 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
             <td>ENGR 1100</td>
@@ -219,13 +220,13 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
             <td>ENGR 1100</td>
@@ -246,13 +247,13 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
             <td>ENG 1100</td>
@@ -270,13 +271,13 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
             <td>ENG 1100</td>
@@ -297,13 +298,13 @@
             <td>ENGR 1100</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
             <td>GE Foundation</td>
@@ -312,19 +313,21 @@
           break;
 
         case("engphy"):
+          var engphystext = 'PHYSICS 1250-1251, 1260-1261, or 1270-1271'
+          if(honors) engphystext = 'PHYSICS 1250-1251, 1250H-1251H, 1260-1261, or 1270-1271'
           text.innerHTML = `
           <table>
           <tr>
             <th>Courses</th>
           </tr>
           <tr>
-            <td>PHYSICS 1270* Options listed below</td>
+            <td>`+engphystext+`</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
             <td>ENG 1100</td>
@@ -342,16 +345,16 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
             <td>ENG 1100</td>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
             <td>Writing and Info Literacy GE</td>
@@ -369,13 +372,13 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
             <td>ENG 1100</td>
@@ -383,13 +386,11 @@
           <tr>
             <td>Writing and Info Literacy GE</td>
           </tr>
-          <tr>
-            <td>FW???</td>
-          </tr>
           </table>`;
           break;
         
         case("fabefood" || "fabebio"):
+          
           text.innerHTML = `
           <table>
           <tr>
@@ -399,13 +400,13 @@
             <td>ENGR 1100.15 or equiv</td>
           </tr>
           <tr>
-            <td>CHEM 1210</td>
+            <td>`+ getChem(honors) +`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
             <td>General Education</td>
@@ -426,13 +427,13 @@
             <td>ENGR 1100.15 or equiv</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
             <td>General Education</td>
@@ -453,13 +454,13 @@
             <td>ENG 1100</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
             <td>GEN ED</td>
@@ -474,13 +475,13 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
             <td>ENG 1100</td>
@@ -492,6 +493,7 @@
           break;
 
         case("we"):
+          
           text.innerHTML = `
           <table>
           <tr>
@@ -501,13 +503,13 @@
             <td>ENG 1100</td>
           </tr>
           <tr>
-            <td>ENGR 1181</td>
+            <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getMath(math)+`</td>
+            <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>PHYSICS 1250</td>
+            <td>`+getPhysics(honors)+`</td>
           </tr>
           <tr>
             <td>GEN ED</td>
@@ -521,7 +523,7 @@
 
       };
 
-      function getMath(letter){
+      function getMath(letter, honors){
         switch(letter){
           case("S"):
             return `MATH 1050`;
@@ -534,21 +536,35 @@
           case("Low L"):
             return `MATH 1140`;
           case("Mid to High L"):
-            return `MATH 1151 or 1181H`;
+            if(honors)return "MATH 1151 or 1181H"
+            else return `MATH 1151`;
           default:
             return `Invalid Math`;
-          return ``;
+          return `You shouldn't see this`;
         }
       }
 
       function changeHonors(honors){
         var honorsText = document.getElementById("honorstext");
-        if(honors){
-          honorsText.innerHTML = `Honors? Yes`;
-        }else{
-          honorsText.innerHTML = `Honors? No`;
-        }
+        if(honors) honorsText.innerHTML = `Please make sure you don't select more than two honors courses`;
+        else honorsText.innerHTML = `Honors not selected`;
       }
+
+      function getPhysics(honors){
+        if(honors)return `PHYSICS 1250 or 1250H`
+        else return `PHYSICS 1250`
+      }
+
+      function getChem(honors){
+        if(honors)return `CHEM 1210 or 1910H`
+        else return `CHEM 1210`
+      }
+
+      function getEngr(honors){
+        if(honors)return `ENGR 1181 or 1281`
+        else return `ENGR 1181`
+      }
+
 
       function changeImage(){
         var img = document.getElementById("img");
