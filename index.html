@@ -129,7 +129,7 @@
             <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>`+getEngr(honors)+`</td>
@@ -199,7 +199,7 @@
             <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>ENGR 1100</td>
@@ -226,7 +226,7 @@
             <td>`+getEngr(honors)+`</td>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>ENGR 1100</td>
@@ -247,7 +247,7 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>`+getMath(math,honors)+`</td>
@@ -271,7 +271,7 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>`+getMath(math,honors)+`</td>
@@ -304,7 +304,7 @@
             <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>GE Foundation</td>
@@ -354,7 +354,7 @@
             <td>ENG 1100</td>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>Writing and Info Literacy GE</td>
@@ -372,7 +372,7 @@
             <th>Courses</th>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>`+getMath(math,honors)+`</td>
@@ -433,7 +433,7 @@
             <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>General Education</td>
@@ -460,7 +460,7 @@
             <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>GEN ED</td>
@@ -478,7 +478,7 @@
             <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>`+getEngr(honors)+`</td>
@@ -509,7 +509,7 @@
             <td>`+getMath(math,honors)+`</td>
           </tr>
           <tr>
-            <td>`+getPhysics(honors)+`</td>
+            <td>`+getPhysics(honors, math)+`</td>
           </tr>
           <tr>
             <td>GEN ED</td>
@@ -550,7 +550,8 @@
         else honorsText.innerHTML = `Honors not selected`;
       }
 
-      function getPhysics(honors){
+      function getPhysics(honors, math){
+        if(math == "Low L" || math == "M" || math == "N" || math == "R" || math == "S") return `CHEM 1210 (Math too low to take Physics)`
         if(honors)return `PHYSICS 1250 or 1260`
         else return `PHYSICS 1250`
       }
