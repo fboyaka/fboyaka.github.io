@@ -32,7 +32,7 @@
     <title>OSU Bingo Sheets</title>
   </head>
   <body>
-
+    <!--
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -46,6 +46,7 @@
         </ul>
       </div>
     </nav>
+    -->
 
     <div class="row">
     <div class="col-sm-4"></div>
@@ -306,7 +307,31 @@
           </table>`;
           break;
 
-        case("compeng" || "eleceng"):
+        case("compeng"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>ENGR 1100</td>
+          </tr>
+          <tr>
+            <td>`+getEngr(honors)+`</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math,honors)+`</td>
+          </tr>
+          <tr>
+            <td>`+getPhysics(honors, math)+`</td>
+          </tr>
+          <tr>
+            <td>GE Foundation</td>
+          </tr>
+          </table>`;
+          break;
+
+        case("eleceng"):
           text.innerHTML = `
           <table>
           <tr>
@@ -407,7 +432,7 @@
           </table>`;
           break;
         
-        case("fabefood" || "fabebio"):
+        case("fabefood"):
           
           text.innerHTML = `
           <table>
@@ -435,7 +460,62 @@
           </table>`;
           break;
 
-        case("fabeag" || "fabeeco"):
+        case("fabebio"):
+          
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>ENGR 1100.15 or equiv</td>
+          </tr>
+          <tr>
+            <td>`+ getChem(honors) +`</td>
+          </tr>
+          <tr>
+            <td>`+getEngr(honors)+`</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math,honors)+`</td>
+          </tr>
+          <tr>
+            <td>General Education</td>
+          </tr>
+          <tr>
+            <td>GENED 1201</td>
+          </tr>
+          </table>`;
+          break;
+
+        case("fabeeco"):
+          text.innerHTML = `
+          <table>
+          <tr>
+            <th>Courses</th>
+          </tr>
+          <tr>
+            <td>ENGR 1100.15 or equiv</td>
+          </tr>
+          <tr>
+            <td>`+getEngr(honors)+`</td>
+          </tr>
+          <tr>
+            <td>`+getMath(math,honors)+`</td>
+          </tr>
+          <tr>
+            <td>`+getPhysics(honors, math)+`</td>
+          </tr>
+          <tr>
+            <td>General Education</td>
+          </tr>
+          <tr>
+            <td>GENED 1201</td>
+          </tr>
+          </table>`;
+          break;
+
+        case("fabeeco"):
           text.innerHTML = `
           <table>
           <tr>
