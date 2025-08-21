@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>DnD Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Internal scripts and stylesheets -->
+  <script src="js/index.js"></script>
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- External scripts and stylesheets -->
+  <!-- Error message about "Could not read source map" is VS Code attempting to debug chart.js. Ignore this message. -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.6.0/math.min.js" integrity="sha512-nw07d3E1b2VJ8z/JI92aD68bVsX0K8XSSUB/IDUvAEvOlC75mJe3+IGg+zAnllwGku1hSHUVLqgtb+CUp7NeyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://getbootstrap.com/docs/5.0/examples/grid/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container" class="vh-100">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">
+      <h2 class="center">Player 1</h2>
+      <h4 class="center">DPS:<div id="p1DPS"></div></h4>
+      <form>
+      <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="P1HP" placeholder="Health" name="P1HP" value=100>
+        <label for="P1HP">P1 Health</label>
+      </div>
+      <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="P1AC" placeholder="AC" name="P1AC" value=15>
+        <label for="P1AC">P1 AC</label>
+      </div>
+      <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="P1HitDice" placeholder="Hit Dice" name="P1HitDice" value="2d6+1d4 + 1">
+        <label for="P1HitDice">P1 Hit Dice</label>
+      </div>
+      <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="P1DamageDice" placeholder="Damage Dice" name="P1DamageDice" value="1d10">
+        <label for="P1DamageDice">P1 Damage Dice</label>
+      </div>
+      </form>
+      <div class="center">
+        <button onclick="processAllInputs()" type="submit" class="btn btn-primary">Calculate</button>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <h2 class="center">Player 2</h2>
+      <h4 class="center">DPS:<div id="p2DPS"></div></h4>
+      <form>
+      <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="P2HP" placeholder="Health" name="P2HP" value=100>
+        <label for="P2HP">P2 Health</label>
+      </div>
+      <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="P2AC" placeholder="AC" name="P2AC" value=12>
+        <label for="P2AC">P2 AC</label>
+      </div>
+      <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="P2HitDice" placeholder="Hit Dice" name="P2HitDice" value="2d8 + 6">
+        <label for="P2HitDice">P2 Hit Dice</label>
+      </div>
+      <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control" id="P2DamageDice" placeholder="Damage Dice" name="P2DamageDice" value="1d12">
+        <label for="P2DamageDice">P2 Damage Dice</label>
+      </div>
+      </form>
+      <div class="center">
+        <button onclick="clearAllInputs()" type="submit" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+  <br/>
+  <br/>
+  <div class="row">
+    <div class="col-sm-5">
+    <canvas id="player1Chart"></canvas>
+    </div>
+    <div class="col-sm-2">
+    <canvas id="oddsPieChart"></canvas>
+    </div>
+    <div class="col-sm-5">
+    <canvas id="player2Chart"></canvas>
+    </div>
+  </div>
+</div>
+</body>
+</html>
