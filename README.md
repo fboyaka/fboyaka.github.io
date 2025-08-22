@@ -1,13 +1,13 @@
 # DND Calculator
 This Design Doc will be created using guidelines described in the [Initial Planning document](Initial%20Planning%20Document.md).
 
-![Website with eight input fields, two buttons, and three charts](/images/DnD-Calculator-Working-Example.png "DnD Calculator Working Example")
+![Website with eight input fields, two buttons, and three charts](images/DnD-Calculator-Working-Example.png "DnD Calculator Working Example")
 
 ## SPRINT 1 WEEK 2 (August 18)
 | MON | TUES | WED  | THURS | FRI | SAT |
 |--|--|--|--|--|--|
-|~~(0.5pts) Sprint planning~~|~~(0.5pts) Vertical line on chart for AC~~|~~(1pt) Display hit dice results in a single chart~~|(0.5pts) Migrate code to fboyaka.github.io page|(0.5pts) Tab visuals|(1pt) Home/About Me page|
-|~~(0.5pts) Chart update~~|~~(0.5pts) Website layout and page planning~~||(0.5pts) Refactor code for fboyaka.github.io|(0.5pts) Tab functionality|(0.5pts) Sprint planning page|
+|~~(0.5pts) Sprint planning~~|~~(0.5pts) Vertical line on chart for AC~~|~~(1pt) Display hit dice results in a single chart~~|~~(0.5pts) Migrate code to fboyaka.github.io page~~|(0.5pts) Tab visuals|(1pt) Home/About Me page|
+|~~(0.5pts) Chart update~~|~~(0.5pts) Website layout and page planning~~||~~(0.5pts) Refactor code for fboyaka.github.io~~|(0.5pts) Tab functionality|(0.5pts) Sprint planning page|
 
 **Table 1:** Scrum Board
 
@@ -24,7 +24,7 @@ This Design Doc will be created using guidelines described in the [Initial Plann
 ## Project Description
 Dungeons and Dragons is a popular tabletop game used to simulate combat and roleplaying. In order to practice my data visualization skills, I will create a simple web page that will allow the user to enter information about two individuals in physical combat and display statistical information about the result of the fight.
 Page layout is included in the screenshot below:
-![Website layout with eight input fields, two buttons, and three charts](/images/DnD-Calculator-Layout.png "DnD Calculator Layout")
+![Website layout with eight input fields, two buttons, and three charts](images/DnD-Calculator-Layout.png "DnD Calculator Layout")
 
 ## Project Workflow
 Users will input basic stats for two combatants (Attacker and Defender) which, when the "Calculate" button is pressed, will three sets of informatics will appear: 1) A pie chart depicting the odds that the attacker will win. 2) A bar chart that will display the possible rolls that the attacker and defender and a vertical line depicting the value needed to hit the other opponent (their AC). 3) A table depicting the odds that each combatant is defeated at each turn.
