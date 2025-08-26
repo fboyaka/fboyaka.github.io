@@ -277,6 +277,12 @@ function initializeBarChart(canvasId){
       type: "bar",
       data: data,
       options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Initial P1 Bar Chart'
+          }
+        },
         scales: {
           x:{
             stacked: true,
@@ -293,6 +299,12 @@ function initializeBarChart(canvasId){
       type: "bar",
       data: data,
       options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Initial P2 Bar Chart'
+          }
+        },
         scales: {
           y: {
             beginAtZero: true,
@@ -332,6 +344,14 @@ function initializePieChart(canvasId){
   pieChart = new Chart("oddsPieChart", {
     type: "pie",
     data: data,
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Initial Pie Chart'
+        }
+      }
+    }
   });
 }
 
@@ -405,6 +425,10 @@ function displayPieChart(chart,canvasId){
     data: data,
     options: {
       plugins: {
+        title: {
+          display: true,
+          text: 'Initial P2 Bar Chart'
+        },
         tooltip: {
           callbacks: {
             label: function (tooltipData) {
@@ -895,5 +919,5 @@ function processAllInputs(){
 document.addEventListener("DOMContentLoaded", function() {
   initializeBarChart("P1");
   initializePieChart("oddsPieChart");
-  initializeBarChart("P2");
+  // initializeBarChart("P2");
 });
