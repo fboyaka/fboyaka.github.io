@@ -12,36 +12,43 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1 class="center">Florian Personal Website (Simple)</h1>
-  <div class="container">
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Projects</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="code/AU23BingoSheet.html">AU23 Bingo Sheet</a></li>
-          <li><a class="dropdown-item" href="code/DnDCalc.html">DnD Calculator</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="code/AboutMe.html">About Me</a>
-      </li>
-    </ul>
-  </div>
-  
-  <div class="container" class="vh-100">
+  <div class="container-fluid pt-1">
     <div class="row">
+      <h1 class="center center-text">Florian Personal Website (Simple)</h1>
+    </div>
+  </div>
+  <div class="container-fluid p-5">
+    <div class="row justify-content-md-center">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Projects</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="code/AU23BingoSheet.html">AU23 Bingo Sheet</a></li>
+            <li><a class="dropdown-item" href="code/DnDCalc.html">DnD Calculator</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="code/AboutMe.html">About Me</a>
+        </li>
+      </ul>
+    </div>
+    <div class="row justify-content-md-center pt-4">
       <h2>Introduction</h2>
+    </div>
+    <div class="row justify-content-md-center">
       <p>My name is Florian Boyaka. I'm a Software Developer and Data Analyst looking for work.
       <br>This website is where I keep track of my current projects and their progress.
-      <br>To contact me, please reach out to my email <a href="mailto:florianboyaka@gmail.com">florianboyaka@gmail.com</a> or my phone number (205)907-7757.
-      <br>Otherwise check out my code more in depth at <a href="https://github.com/fboyaka">github.com/fboyaka</a> or my <a href="https://www.linkedin.com/in/florian-boyaka-23073410b/">LinkedIn</a>.</p>
+      <br>To contact me, please reach out to my email <a href="mailto:florianboyaka@gmail.com">florianboyaka@gmail.com</a>, message me on <a href="https://www.linkedin.com/in/florian-boyaka-23073410b/">LinkedIn</a>, or leave a voicemail at (205)907-7757.
+      <br>Feel free to check out my code more in depth at <a href="https://github.com/fboyaka">github.com/fboyaka</a>.</p>
     </div>
     <hr class="hr" />
-    <div class="row">
+    <div class="row justify-content-md-center">
       <h2>Project Descriptions</h2>
+    </div>
+    <div class="row justify-content-md-center">
       <div class="col-sm-8">
       <h3>AU23 Bingo Sheet</h3>
       <p>
@@ -61,9 +68,11 @@
       </div>
     </div>
     <hr class="hr" />
-    <div class="row">
+    <div class="row justify-content-md-center">
+      <h2>DnD Calculator</h2>
+    </div>
+    <div class="row justify-content-md-center">
       <div class="col-sm-8">
-        <h3>DnD Calculator</h3>
         <p>
           Having started this project on August 11, 2025 the DnD Calculator was what created from my drive to create visualizations and my recent interest in Dungeons and Dragons.
           The original concept was a simulator that would allow the user to input an entire board of characters, enemies, and their stats to simulate combat and determine which
@@ -87,63 +96,55 @@
       </div>
     </div>
     <hr class="hr" />
-    <div class="row">
-      <h2>Sprint Planning</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Sprint</th>
-            <th scope="col">Monday</th>
-            <th scope="col">Tuesday</th>
-            <th scope="col">Wednesday</th>
-            <th scope="col">Thursday</th>
-            <th scope="col">Friday</th>
-            <th scope="col">Saturday</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Sprint 2 Week 1 (August 25)</th>
-            <td><s>(0.5pts) Add project description on landing page<br>(0.5pts) Update visuals for degrees in the About Me page</s></td>
-            <td><s>(0.5pts) Update DND layout for only one graph<br>(0.5pts) Add descriptive text for DND Calc on landing page and project page</s></td>
-            <td>(1pt) Update visuals on Landing page to be phone accessible</td>
-            <td>(1pt) Update visuals on About Me page to be phone accessible</td>
-            <td>(0.5pts) Create Markdown to Table converter and vice versa<br>(0.5pts) Sprint review (for S2W1 and S1W2)</td>
-            <td>(0.5pts) Create resources page<br>(0.5pts) Add phone accessibility for resources page</td>
-          </tr>
-          <tr>
-            <th scope="row">Sprint 1 Week 2 (August 18)</th>
-            <td><s>(0.5pts) Sprint planning<br>(0.5pts) Chart update</s></td>
-            <td><s>(1pt) Display hit dice results in a single chart<br>(0.5pts) Website layout and page planning</s></td>
-            <td><s>(0.5pts) Migrate code to fboyaka.github.io page<br></s></td>
-            <td><s>(0.5pts) Migrate code to fboyaka.github.io page<br>(0.5pts) Refactor code for fboyaka.github.io</s></td>
-            <td><s>(0.5pts) Tab visuals<br>(0.5pts) Tab functionality</td>
-            <td><s>(1pt) Home/About Me page<br>(0.5pts) Sprint planning page</s></td>
-          </tr>
-          <tr>
-            <th scope="row">Sprint 1 Week 1 (August 11)</th>
-            <td><s>(0.5 pts) Sprint Planning<br>(0.5 pts) Initialize Inputs and Buttons</s></td>
-            <td><s>(0.5 pts) Button/Input Initialization<br>(0.5 pts) Graph Initialization</s></td>
-            <td><s>(1 pt) Range of Hit Dice VS AC graph</s></td>
-            <td><s>(1 pt) DPS Calculation per Character</s></td>
-            <td><s>(0.5 pts) Sprint Retrospective<br>(0.5 pts) Input Validation</s></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="row justify-content-md-center">
+      <h3>Sprint Planning</h3>
     </div>
-  </div>
-  <!-- 
-  </div>
-  <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
-      <div class="center">
-        <img class="img-fluid" src="images/GraphicDesign.webp">
+    <div class="row justify-content-md-center">
+      <div class="wide-table">
+        <table class="table">
+          <thead>
+            <tr class="center-text">
+              <th scope="col">Sprint</th>
+              <th scope="col">Monday</th>
+              <th scope="col">Tuesday</th>
+              <th scope="col">Wednesday</th>
+              <th scope="col">Thursday</th>
+              <th scope="col">Friday</th>
+              <th scope="col">Saturday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Sprint 2<br>Week 1<br>(August 25)</th>
+              <td><s>(0.5pts) Add project description on landing page<br>(0.5pts) Update visuals for degrees in the About Me page</s></td>
+              <td><s>(0.5pts) Update DND layout for only one graph<br>(0.5pts) Add descriptive text for DND Calc on landing page and project page</s></td>
+              <td>(1pt) Update visuals on Landing page to be phone accessible</td>
+              <td>(1pt) Update visuals on About Me page to be phone accessible</td>
+              <td>(0.5pts) Create Markdown to Table converter and vice versa<br>(0.5pts) Sprint review (for S2W1 and S1W2)</td>
+              <td>(0.5pts) Create resources page<br>(0.5pts) Add phone accessibility for resources page</td>
+            </tr>
+            <tr>
+              <th scope="row">Sprint 1<br>Week 2<br>(August 18)</th>
+              <td><s>(0.5pts) Sprint planning<br>(0.5pts) Chart update</s></td>
+              <td><s>(1pt) Display hit dice results in a single chart<br>(0.5pts) Website layout and page planning</s></td>
+              <td><s>(0.5pts) Migrate code to fboyaka.github.io page<br></s></td>
+              <td><s>(0.5pts) Migrate code to fboyaka.github.io page<br>(0.5pts) Refactor code for fboyaka.github.io</s></td>
+              <td><s>(0.5pts) Tab visuals<br>(0.5pts) Tab functionality</td>
+              <td><s>(1pt) Home/About Me page<br>(0.5pts) Sprint planning page</s></td>
+            </tr>
+            <tr>
+              <th scope="row">Sprint 1<br>Week 1<br>(August 11)</th>
+              <td><s>(0.5 pts) Sprint Planning<br>(0.5 pts) Initialize Inputs and Buttons</s></td>
+              <td><s>(0.5 pts) Button/Input Initialization<br>(0.5 pts) Graph Initialization</s></td>
+              <td><s>(1 pt) Range of Hit Dice VS AC graph</s></td>
+              <td><s>(1 pt) DPS Calculation per Character</s></td>
+              <td><s>(0.5 pts) Sprint Retrospective<br>(0.5 pts) Input Validation</s></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    <div class="col-sm-3"></div>
   </div>
-  -->
 </body>
 </html>
