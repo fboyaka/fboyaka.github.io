@@ -16,90 +16,95 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1 class="center">Florian Personal Website (Simple)</h1>
-<div class="container">
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link" aria-current="page" href="../index.html">Home</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Projects</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="AU23BingoSheet.html">AU23 Bingo Sheet</a></li>
-        <li><a class="dropdown-item active" href="DnDCalc.html">DnD Calculator</a></li>
+<div class="container p-1">
+    <div class="row g-0">
+      <h1 class="center center-text">Florian Personal Website (Simple)</h1>
+    </div>
+    <div class="row g-0 justify-content-md-center">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Projects</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="AU23BingoSheet.html">AU23 Bingo Sheet</a></li>
+            <li><a class="dropdown-item active" href="#">DnD Calculator</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="AboutMe.html">About Me</a>
+        </li>
       </ul>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="AboutMe.html">About Me</a>
-    </li>
-  </ul>
-</div>
-<div class="container" class="vh-100">
-  <div class="row">
-    <h1 class="center">DnD Calculator</h1>
+    </div>
   </div>
-  <div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-4">
-      <h2 class="center">Player 1</h2>
-      <h4 class="center">DPS:<div id="p1DPS"></div></h4>
-      <form>
-      <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="P1HP" placeholder="Health" name="P1HP" value=100>
-        <label for="P1HP">P1 Health</label>
-      </div>
-      <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="P1AC" placeholder="AC" name="P1AC" value=15>
-        <label for="P1AC">P1 AC</label>
-      </div>
-      <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="P1HitDice" placeholder="Hit Dice" name="P1HitDice" value="2d6+1d4 + 1">
-        <label for="P1HitDice">P1 Hit Dice</label>
-      </div>
-      <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="P1DamageDice" placeholder="Damage Dice" name="P1DamageDice" value="1d10">
-        <label for="P1DamageDice">P1 Damage Dice</label>
-      </div>
-      </form>
-      <div class="center">
-        <button onclick="processAllInputs()" type="submit" class="btn btn-primary">Calculate</button>
-      </div>
+  <div class="container">
+    <div class="row g-0">
+      <h1 class="center">DnD Calculator</h1>
     </div>
-    <div class="col-sm-4">
-      <h2 class="center">Player 2</h2>
-      <h4 class="center">DPS:<div id="p2DPS"></div></h4>
-      <form>
-      <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="P2HP" placeholder="Health" name="P2HP" value=100>
-        <label for="P2HP">P2 Health</label>
+    <div class="row g-0">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-4">
+        <h2 class="center">Player 1</h2>
+        <h4 class="center">DPS:<div id="p1DPS"></div></h4>
+        <form>
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" id="P1HP" placeholder="Health" name="P1HP" value=100>
+          <label for="P1HP">P1 Health</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" id="P1AC" placeholder="AC" name="P1AC" value=15>
+          <label for="P1AC">P1 AC</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" id="P1HitDice" placeholder="Hit Dice" name="P1HitDice" value="2d6+1d4 + 1">
+          <label for="P1HitDice">P1 Hit Dice</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" id="P1DamageDice" placeholder="Damage Dice" name="P1DamageDice" value="1d10">
+          <label for="P1DamageDice">P1 Damage Dice</label>
+        </div>
+        </form>
+        <div class="center">
+          <button onclick="processAllInputs()" type="submit" class="btn btn-primary">Calculate</button>
+        </div>
       </div>
-      <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="P2AC" placeholder="AC" name="P2AC" value=12>
-        <label for="P2AC">P2 AC</label>
+      <div class="col-sm-4">
+        <h2 class="center">Player 2</h2>
+        <h4 class="center">DPS:<div id="p2DPS"></div></h4>
+        <form>
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" id="P2HP" placeholder="Health" name="P2HP" value=100>
+          <label for="P2HP">P2 Health</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" id="P2AC" placeholder="AC" name="P2AC" value=12>
+          <label for="P2AC">P2 AC</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" id="P2HitDice" placeholder="Hit Dice" name="P2HitDice" value="2d8 + 6">
+          <label for="P2HitDice">P2 Hit Dice</label>
+        </div>
+        <div class="form-floating mb-3 mt-3">
+          <input type="text" class="form-control" id="P2DamageDice" placeholder="Damage Dice" name="P2DamageDice" value="1d12">
+          <label for="P2DamageDice">P2 Damage Dice</label>
+        </div>
+        </form>
+        <div class="center">
+          <button onclick="clearAllInputs()" type="submit" class="btn btn-secondary">Clear</button>
+        </div>
       </div>
-      <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="P2HitDice" placeholder="Hit Dice" name="P2HitDice" value="2d8 + 6">
-        <label for="P2HitDice">P2 Hit Dice</label>
-      </div>
-      <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control" id="P2DamageDice" placeholder="Damage Dice" name="P2DamageDice" value="1d12">
-        <label for="P2DamageDice">P2 Damage Dice</label>
-      </div>
-      </form>
-      <div class="center">
-        <button onclick="clearAllInputs()" type="submit" class="btn btn-secondary">Clear</button>
-      </div>
+      <div class="col-sm-2"></div>
     </div>
-    <div class="col-sm-2"></div>
-  </div>
-  <br/>
-  <br/>
-  <div class="row">
-    <div class="col-sm-8">
-    <canvas id="player1Chart"></canvas>
-    </div>
-    <div class="col-sm-4">
-    <canvas id="oddsPieChart"></canvas>
+    <br/>
+    <br/>
+    <div class="row g-0">
+      <div class="col-sm-8">
+      <canvas id="player1Chart"></canvas>
+      </div>
+      <div class="col-sm-4">
+      <canvas id="oddsPieChart"></canvas>
+      </div>
     </div>
   </div>
 </div>
