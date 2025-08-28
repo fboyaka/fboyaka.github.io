@@ -11,3 +11,8 @@
 .wide-table {
   overflow-x: auto;
 }
+
+.logo {
+  max-height: 150px;
+  float: left;
+}
