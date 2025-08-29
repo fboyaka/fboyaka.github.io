@@ -4,7 +4,7 @@
 ### SPRINT 2 WEEK 1 (August 25)
 | MON | TUES | WED  | THURS | FRI | SAT |
 |--|--|--|--|--|--|
-|~~(0.5pts) Add project description on landing page~~|~~(0.5pts) Update DND layout for only one graph~~|~~(1pt) Update visuals on Landing page to be phone accessible~~|(1pt) Update visuals on About Me page to be phone accessible|(0.5pts) Create Markdown to Table converter and vice versa|(0.5pts) Create resources page|
+|~~(0.5pts) Add project description on landing page~~|~~(0.5pts) Update DND layout for only one graph~~|~~(1pt) Update visuals on Landing page to be phone accessible~~|~~(1pt) Update visuals on About Me page to be phone accessible~~|(0.5pts) Create Markdown to Table converter and vice versa|(0.5pts) Create resources page|
 |~~(0.5pts) Update visuals for degrees in the About Me page~~|~~(0.5pts) Add descriptive text for DND Calc on landing page~~|||(0.5pts) Sprint review (for S2W1 and S1W2)|(0.5pts) Add phone accessibility for resources page |
 
 
