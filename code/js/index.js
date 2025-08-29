@@ -29,7 +29,7 @@ const verticalLinePlugin = {
   renderVerticalLine: function (chartInstance, pointIndex) {
     // console.log("pointIndex");
     // console.log(pointIndex);
-    const lineLeftOffset = chartInstance.scales.x.getPixelForValue(parseInt(pointIndex) + 0.5);
+    const lineLeftOffset = chartInstance.scales.x.getPixelForValue(parseInt(pointIndex) - 0.5);
     const scale = chartInstance.scales.y;
 
     const context = chartInstance.ctx;
@@ -427,7 +427,7 @@ function displayPieChart(chart,canvasId){
       plugins: {
         title: {
           display: true,
-          text: 'Initial P2 Bar Chart'
+          text: 'Odds Pie Chart'
         },
         tooltip: {
           callbacks: {
