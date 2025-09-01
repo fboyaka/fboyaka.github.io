@@ -90,7 +90,7 @@
       </div>
       <div class="col-sm-2"></div>
     </div>
-    <div class="row g-0">
+    <div class="row g-0 p-3">
       <div class="col-sm-2"></div>
       <div class="col-sm-4">
         <div class="center p-2">
@@ -113,6 +113,128 @@
       <div class="col-sm-4">
       <canvas id="oddsPieChart"></canvas>
       </div>
+    </div>
+    <div class="row">
+      <h2>Description</h2>
+    </div>
+    <div class="row">
+      <p>
+        Dungeons and Dragons (DnD) is a popular tabletop roleplaying game (TTRPG) which often involves rolling dice in order
+        to determine success or failure both in and outside of combat (referred to as <i>encounters</i>).
+        Because of the complexity involved in those rolls, it is often difficult to determine whether or not an opponent
+        would be easy or difficult without prior testing or a pre-existing knowledge of similar encounters.
+        This calculator offloads that mental load of "feeling" the possible outcomes and presents them as a two charts with clear percentages
+        a definitive statistic for success or failure.
+      </p>
+    </div>
+    <div class="row">
+      <h2>Explanations</h2>
+    </div>
+    <div class="row">
+      <p>
+        For those unfamiliar with the mechanics and key terms of DnD, this section will lay them out:
+        <br>
+        <i>(Traditionally the game is played with multiple players but for the example below it will only use one player and one enemy for the sake of simplicity)</i>
+      </p>
+      <p>
+        A player and a goblin get into a fight. From the beginning, they both have certain stats that are independent from their opponent:
+        <b>Health</b>, <b>Armor Class</b>, <b>Hit Dice</b>, and <b>Damage Dice</b>.
+      </p>
+    </div>
+    <div class="row wide-table p-2">
+      <ul class="list-group">
+        <li class="list-group-item"><b>Health (HP)</b>: HP is the amount of damage the player (or enemy) can take before they are knocked unconcious (this counts as a loss).</li>
+        <li class="list-group-item">
+          <b>Armor Class (AC)</b>: AC can be interpreted as everything's defence. When anything attacks, it needs to "meet or beat" the AC of what they are trying to hit.
+          If the attacker gets lower than the AC the attack will miss and deal 0 damage.
+        </li>
+        <li class="list-group-item"><b>Hit Dice</b>: The dice you roll to it an opponent. </li>
+        <li class="list-group-item"><b>Damage Dice</b>: After an attacker "meets or beats" the defender's AC, they roll again with these dice to determine how much HP the defender will lose.</li>
+        <li class="list-group-item">
+          <b>Dice Rolls</b>: When rolling dice, players will use shorthand to describe the type of dice, their quantity, and any modifiers (+1, -2, etc.) to save time.
+          For example, if a player wants to roll to hit an opponent and can roll <u>three, twelve-sided dice</u> and has a <u>+1 modifier</u> they would write it as
+          <b>2d6+1</b>.
+        </li>
+        <li class="list-group-item">
+          <b>Odds of Success</b>: This is the formula used to determine success for each combatant in the calculator (internally referred to as the Damage Score):
+          <br>
+          (Count of Attacker Hit Dice results >= Defender's AC / Count of all Attacker Hit Dice results)*(Attacker's average Damage/Defender's HP)
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <p>
+        The player and goblin now fight by attcking each other. 
+        The player has a heavy hammer which would do a lot of damage but they're not very accurate with it.
+        On the other hand, the goblin is small, nimble, and has a small knife which doesn't do much damage but is much easier to hit the player with.
+        Let's see what their stats might look like for this example:
+      </p>
+    </div>
+    <div class="row p-2">
+      <table class="table table-bordered">
+          <thead class="table-dark small-table">
+            <tr class="center-text">
+              <th scope="col">Stats</th>
+              <th scope="col">Player</th>
+              <th scope="col">Goblin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">HP</th>
+              <td>20</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th scope="row">AC</th>
+              <td>10</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th scope="row">Hit Dice</th>
+              <td>1d20</td>
+              <td>2d12</td>
+            </tr>
+            <tr>
+              <th scope="row">Damage Dice</th>
+              <td>1d12</td>
+              <td>2d3</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="row">
+      <p>
+        From just looking at the numbers it's hard to guess who would win.
+        The player might get a lucky hit and defeat the goblin in a single hit while the goblin could be more likely to keep dodging and defeat the player through attrition.
+        This is where the calculator comes in handy.
+        By inputting the values above we get the following result: 
+      </p>
+    </div>
+    <div class="row p-2">
+      <div class="col-sm-8">
+        <img class="img-thumbnail center small-image" src="../images/DnD-Calculator-Player-Goblin-Bar.png">
+      </div>
+      <div class="col-sm-4">
+        <img class="img-thumbnail center small-image" src="../images/DnD-Calculator-Player-Goblin-Pie.png">
+      </div>
+    </div>
+    <div class="row">
+      <p>
+        With bar graph we're able to compare the dice rolls vs the AC for both the player and the goblin (Player 1 and Player 2 respectively)
+        at the same time while the pie chart displays the odds of winning for both combatants. 
+        We see that the player has a lower AC so more of the goblins attacks are able to land.
+        However, the pie chart shows that despite the gobin having higher accuracy, it is significantly less likely to defeat the player.
+      </p>
+      <p>
+        This shows how the encounter of a player against a single goblin would be a balanced encounter since the player would have a higher likelihood of winning the fight.
+        Even when using stronger enemies this could be used to determine whether or not a Dungeon Master would want an encounter to be overhelmingly strong
+        (where the players are supposed to lose) or just difficult.
+      </p>
+      <p>
+       As the initial version of this tool it does lack some granularity such as caclulating critical hits (which would add additional damage on a max hit roll)
+       additional enemies, the number of rounds it would take to win for each side, and others.
+       However, it does function in its current state and give a good visual which was the intented goal.
     </div>
   </div>
 </div>
