@@ -1,11 +1,19 @@
 # Personal Website
 
 ## All Sprints
+
+### SPRINT 3 WEEK 1 (September 1)
+| MON | TUES | WED  | THURS | FRI |
+|--|--|--|--|--|
+|(0.5pts) Identify questions to answer|(1pt) Clean accepted loan data|(1pts) Clean denied loan data|(0.5pts) Create example data, figures, and charts on .rmd file|(1pt) Exploratory data analysis for denied loan data|
+|(0.5pts) Identify success metrics|||(0.5pts) Knit .rmd to HTML and upload||
+
+
 ### SPRINT 2 WEEK 1 (August 25)
 | MON | TUES | WED  | THURS | FRI | SAT |
 |--|--|--|--|--|--|
-|~~(0.5pts) Add project description on landing page~~|~~(0.5pts) Update DND layout for only one graph~~|~~(1pt) Update visuals on Landing page to be phone accessible~~|~~(1pt) Update visuals on About Me page to be phone accessible~~|(0.5pts) Create Markdown to Table converter and vice versa|(0.5pts) Create resources page|
-|~~(0.5pts) Update visuals for degrees in the About Me page~~|~~(0.5pts) Add descriptive text for DND Calc on landing page~~|||(0.5pts) Sprint review (for S2W1 and S1W2)|(0.5pts) Add phone accessibility for resources page |
+|~~(0.5pts) Add project description on landing page~~|~~(0.5pts) Update DND layout for only one graph~~|~~(1pt) Update visuals on Landing page to be phone accessible~~|~~(1pt) Update visuals on About Me page to be phone accessible~~|~~(1.5pts) Create Markdown to Table converter and vice versa<br>Extended to Saturday~~ Extended to Saturday|*(0.5pts) Create resources page*<br>(Cancelled Task)|
+|~~(0.5pts) Update visuals for degrees in the About Me page~~|~~(0.5pts) Add descriptive text for DND Calc on landing page~~|||~~(0.5pts) Sprint review (for S2W1 and S1W2)~~|*(0.5pts) Add phone accessibility for resources page*<br>(Cancelled Task)|
 
 
 ### SPRINT 1 WEEK 2 (August 18)
@@ -38,8 +46,8 @@ The story will be divided into three parts:
 		-   Home/Landing (Sprints and project descriptions)
 		-   Projects (functional examples of projects)
 		-   About Me (Resume)
-		-   Resources (Cheat Sheets and good websites)
-		-   Review (Sprint Reviews)
+		-   ~~Resources (Cheat Sheets and good websites)~~ -> This information will be displayed on the README
+		-   ~~Review (Sprint Reviews)~~ -> This information will be displayed on the README
 	-   Menu to navigate between pages
 	-   Minor update to the DND Calc to display only one chart
 2.  Functionality
