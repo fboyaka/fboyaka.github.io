@@ -5,8 +5,8 @@
 ### SPRINT 3 WEEK 1 (September 1)
 | MON | TUES | WED  | THURS | FRI |
 |--|--|--|--|--|
-|(0.5pts) Identify questions to answer|(1pt) Clean accepted loan data|(1pts) Clean denied loan data|(0.5pts) Create example data, figures, and charts on .rmd file|(1pt) Exploratory data analysis for denied loan data|
-|(0.5pts) Identify success metrics|||(0.5pts) Knit .rmd to HTML and upload||
+|~~(0.5pts) Identify questions to answer~~|~~(1pt) Clean accepted loan data~~|~~(1pts) Clean denied loan data~~|(0.5pts) Create example data, figures, and charts on .rmd file|(1pt) Exploratory data analysis for denied loan data|
+|~~(0.5pts) Identify success metrics~~|||(0.5pts) Knit .rmd to HTML and upload||
 
 
 ### SPRINT 2 WEEK 1 (August 25)
